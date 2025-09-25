@@ -1,0 +1,56 @@
+server/
+├── index.js
+├── app.js
+├── config/
+│   ├── db.js
+│   ├── rateLimiter.js
+│   └── corsOptions.js
+├── controllers/
+│   ├── auth/
+│   │   ├── login.js
+│   │   ├── register.js
+│   │   ├── refreshToken.js
+│   │   ├── logout.js
+│   │   └── index.js
+│   ├── budget/
+│   │   ├── create.js
+│   │   ├── get.js
+│   │   ├── update.js
+│   │   └── index.js
+│   ├── transaction/
+│   │   ├── create.js
+│   │   ├── get.js
+│   │   ├── update.js
+│   │   ├── delete.js
+│   │   ├── upload.js
+│   │   ├── categories.js
+│   │   └── index.js
+│   ├── user/
+│   │   ├── profile.js
+│   │   ├── update.js
+│   │   └── index.js
+│   └── analytics/
+│       ├── overview.js
+│       ├── trends.js
+│       └── index.js
+├── middleware/
+│   ├── auth.js
+│   ├── errorHandler.js
+│   ├── validation.js
+├── models/
+│   ├── User.js
+│   ├── Transaction.js
+│   └── Budget.js
+├── routes/
+│   ├── auth.js
+│   ├── transactions.js
+│   ├── budgets.js
+│   ├── analytics.js
+│   ├── user.js
+│   └── index.js
+├── services/
+│   ├── mlService.js
+│   └── emailService.js
+├── utils/
+│   ├── csvParser.js
+│   └── logger.js
