@@ -1,28 +1,8 @@
 # 💰 BudgetWise AI Backend  
 
-[![Node.js](https://img.shields.io/badge/Node.js-18.x-green?logo=node.js)](https://nodejs.org/)  
-[![MongoDB](https://img.shields.io/badge/Database-MongoDB-green?logo=mongodb)](https://www.mongodb.com/)  
-[![Express](https://img.shields.io/badge/Framework-Express.js-lightgrey?logo=express)](https://expressjs.com/)  
-[![License](https://img.shields.io/badge/License-MIT-blue)](#)
-
 > 🚀 An **AI-powered personal finance backend** built with Node.js, Express, MongoDB, and JWT authentication.  
 > Features include **budget tracking, transaction management, CSV uploads, and machine learning insights**.
 
----
-
-## 📂 Project Structure  
-
-server/
-├── index.js # Entry point
-├── app.js # Express app setup
-├── config/ # Configurations (DB, CORS, rate limiter)
-├── controllers/ # Request controllers
-├── middleware/ # Custom middleware
-├── models/ # Mongoose models
-├── routes/ # API routes
-├── services/ # External services (ML, Email)
-├── utils/ # Helpers (CSV parsing, logging)
- 
 ---
 
 ## ⚙️ Installation  
