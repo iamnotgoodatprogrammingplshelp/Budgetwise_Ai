@@ -1,15 +1,14 @@
+// server/middleware/errorMiddleware.js
+
 const errorHandler = (err, req, res, next) => {
-  console.error('🚨 Error:', err);
+  console.error(err.stack);
 
-  if (err.name === 'ValidationError') {
-    return res.status(400).json({ error: 'Validation Error', details: err.message });
-  }
+  const statusCode = res.statusCode === 200 ? 500 : res.statusCode;
 
-  if (err.name === 'CastError') {
-    return res.status(400).json({ error: 'Invalid ID format' });
-  }
-
-  res.status(500).json({ error: 'Internal server error' });
+  res.status(statusCode).json({
+    message: err.message || "Server Error",
+    stack: process.env.NODE_ENV === "production" ? null : err.stack,
+  });
 };
 
 module.exports = errorHandler;
