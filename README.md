@@ -1,130 +1,213 @@
-# 💰 BudgetWise AI Backend  
+# BudgetWise AI
 
-> 🚀 An **AI-powered personal finance backend** built with Node.js, Express, MongoDB, and JWT authentication.  
-> Features include **budget tracking, transaction management, CSV uploads, and machine learning insights**.
+BudgetWise AI is a full-stack financial management application designed to help users track expenses, manage budgets, and gain insights into their financial habits. The system provides secure authentication, transaction tracking, and AI-assisted budgeting insights.
+
+The project is structured as a modern JavaScript application with a Node.js backend and a web-based frontend.
 
 ---
 
-## ⚙️ Installation  
+# Features
 
-### 1. Clone the repository  
-```bash
-git clone https://github.com/yourusername/budgetwise-ai-backend.git
-cd budgetwise-ai-backend/server
+* User authentication using JSON Web Tokens
+* Secure password management
+* Expense and income tracking
+* Budget management
+* Email notifications
+* Rate limiting and API protection
+* Structured logging
+* MongoDB database integration
+* Modular backend architecture
+
+---
+
+# Project Structure
+
+```
+budgetwiseai/
+│
+├── client/                 Frontend application
+│
+└── server/
+    │
+    ├── config/             Configuration files
+    │   └── db.js
+    │
+    ├── controllers/        Route controllers
+    │
+    ├── middleware/         Express middleware
+    │   ├── authMiddleware.js
+    │   ├── errorMiddleware.js
+    │   └── rateLimiter.js
+    │
+    ├── models/             Database models
+    │
+    ├── routes/             API routes
+    │
+    ├── services/           Business logic services
+    │   └── emailService.js
+    │
+    ├── utils/              Utility modules
+    │   └── logger.js
+    │
+    └── server.js           Application entry point
+```
+
+---
+
+# Technology Stack
+
+Backend
+
+* Node.js
+* Express.js
+* MongoDB
+* Mongoose
+* JWT Authentication
+* Nodemailer
+* Winston logging
+
+Frontend
+
+* React
+* Modern JavaScript tooling
+
+---
+
+# Installation
+
+Clone the repository:
+
+```
+git clone https://github.com/iamnotgoodatprogrammingplshelp/Budgetwise_Ai.git
+```
+
+Move into the project directory:
+
+```
+cd Budgetwise_Ai
+```
+
+Install backend dependencies:
+
+```
+cd budgetwiseai/server
 npm install
-cp .env.example .env
-PORT=5000
-MONGODB_URI=mongodb://localhost:27017/budgetwise
-JWT_SECRET=your_super_secret_jwt_key_here
-JWT_REFRESH_SECRET=your_refresh_token_secret_here
-FRONTEND_URL=http://localhost:3000
+```
 
-EMAIL_HOST=smtp.gmail.com
+Install frontend dependencies:
+
+```
+cd ../client
+npm install
+```
+
+---
+
+# Required NPM Packages
+
+The backend requires the following packages.
+
+Install them using:
+
+```
+npm install express mongoose dotenv jsonwebtoken bcryptjs cors nodemailer winston express-rate-limit express-validator morgan
+```
+
+Optional development dependencies:
+
+```
+npm install --save-dev nodemon
+```
+
+---
+
+# Environment Variables
+
+Create a `.env` file inside the server directory.
+
+Example configuration:
+
+```
+PORT=5000
+
+MONGODB_URI=mongodb://localhost:27017/budgetwise
+
+JWT_SECRET=your_jwt_secret
+
+EMAIL_HOST=smtp.example.com
 EMAIL_PORT=587
-EMAIL_USER=your_email@gmail.com
-EMAIL_PASS=your_app_password
-PORT=5000
-MONGODB_URI=mongodb://localhost:27017/budgetwise
-JWT_SECRET=your_super_secret_jwt_key_here
-JWT_REFRESH_SECRET=your_refresh_token_secret_here
+EMAIL_USER=your_email
+EMAIL_PASS=your_email_password
+
 FRONTEND_URL=http://localhost:3000
+```
 
-The server will run on:
-👉 http://localhost:5000
+---
 
-🛠 API Overview
-🔑 Auth (/api/auth)
+# Running the Application
 
-POST /register → Register new user
+Start the backend server:
 
-POST /login → Authenticate and get JWT
+```
+npm run dev
+```
 
-POST /refresh → Refresh token
+or
 
-POST /logout → Revoke refresh token
+```
+node server.js
+```
 
-👤 User (/api/user)
+Start the frontend:
 
-GET /profile → Get user profile
+```
+npm start
+```
 
-PUT /update → Update user profile
+---
 
-💳 Transactions (/api/transactions)
+# Security Features
 
-POST / → Create transaction
+The backend implements several security mechanisms:
 
-GET / → Get all transactions
+* JWT authentication
+* Rate limiting
+* Password hashing
+* Environment-based configuration
+* Centralized error handling
 
-PUT /:id → Update transaction
+---
 
-DELETE /:id → Delete transaction
+# Logging
 
-POST /upload → Upload CSV transactions
+The system uses Winston for structured logging. Logs are written both to the console and to log files for debugging and monitoring.
 
-GET /categories → Get categories
+---
 
-📊 Budgets (/api/budgets)
+# API Architecture
 
-POST / → Create budget
+The backend follows a layered architecture:
 
-GET / → Get budgets
+* Routes handle incoming HTTP requests
+* Controllers process the request logic
+* Services implement business functionality
+* Models define MongoDB schemas
+* Middleware handles authentication, validation, and errors
 
-PUT /:id → Update budget
+---
 
-📈 Analytics (/api/analytics)
+# Development
 
-GET /overview → Spending overview
+For development with automatic reload:
 
-GET /trends → Spending trends
+```
+npm run dev
+```
 
-🧰 Tech Stack
+This requires nodemon.
 
-Node.js + Express.js → REST API
+---
 
-MongoDB + Mongoose → Database
+# License
 
-JWT + bcryptjs → Authentication
-
-Nodemailer → Email service
-
-TensorFlow.js → Machine learning features
-
-Helmet, CORS, Compression → Security & performance
-
-✅ Features
-
-✔️ Secure JWT authentication (access + refresh tokens)
-✔️ User management with preferences
-✔️ Transaction + budget tracking
-✔️ File upload & CSV parsing
-✔️ AI-powered transaction categorization (ML)
-✔️ Rate limiting, CORS, and error handling middleware
-
-🧪 Testing
-
-Run Jest tests with:
-
-npm test
-
-📌 Roadmap
-
- Email verification & password reset
-
- Add unit & integration tests
-
- Expand ML service with predictive analytics
-
- Dockerize for production deployment
-
-📜 License
-
-This project is licensed under the MIT License
-.
-
-👨‍💻 Contributing
-
-Pull requests are welcome! For major changes, please open an issue first to discuss what you’d like to change.
-
-🚀 Built with ❤️ for smarter personal finance.
-
-
+This project is open source and available under the MIT License.
